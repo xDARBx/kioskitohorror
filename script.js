@@ -1,3 +1,8 @@
+$(document).ready(function() {
+  // Código a ejecutar una vez haya cargado la página, html, librerías etc..
+  
+  alert('Me ejecuto después de haber cargado toda la página');
+});
 
 var boton = document.getElementById("boton");
 boton.onclick = function(e) {
