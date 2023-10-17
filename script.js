@@ -1,9 +1,4 @@
 $(document).ready(function() {
-  // Código a ejecutar una vez haya cargado la página, html, librerías etc..
-  
-  alert('Me ejecuto después de haber cargado toda la página');
-});
-
 var boton = document.getElementById("boton");
 boton.onclick = function(e) {
 e.preventDefault();
@@ -19,3 +14,8 @@ var cantidad = prompt("elija la cantidad a llevar:")
 var precio = cantidad * precios[indice]
 
 alert("usted debe abonar: $" + precio + " por el producto deseado, " + productos[indice]+"," + " por la cantidad de: "+ cantidad + " unidades.")
+  
+  
+});
+
+
