@@ -1,21 +1,20 @@
-$(document).ready(function() {
-var boton = document.getElementById("boton");
-boton.onclick = function(e) {
-e.preventDefault();
-var fboton = document.createElement("script");
-fboton.src = "script.js";
-document.querySelector("body").appendChild(fboton);
-}
 
-var productos = ["manzana","pera","banana","kiwi"]
-var precios = [300,450,400,900]
-var indice = prompt("elija un producto, ejemplo para manzanas tipear 0 así hasta 3," +" "+ productos + ":")
+
+$("#boton").click(function(){
+    var productos = ["Manzana"," Pera"," Banana"," Kiwi"]
+var precios = [300, 450, 400, 900]
+var indice = prompt("Elija un producto, ejemplo para Manzana tipear 1:"+"\n"+ productos + ":" + "\n" + "PRECIO: $" + precios)
 var cantidad = prompt("elija la cantidad a llevar:")
-var precio = cantidad * precios[indice]
+var precio = cantidad * precios[indice-1]
 
-alert("usted debe abonar: $" + precio + " por el producto deseado, " + productos[indice]+"," + " por la cantidad de: "+ cantidad + " unidades.")
-  
-  
+      if(indice<=productos.length){
+        Swal.fire('Usted debe abonar: $' + precio + " por el producto elegido: " + productos[indice-1]+ ", " + "y por la cantidad de: " + cantidad + " unidad/es." )
+        indice++
+      }else{
+        Swal.fire("Ingresó un producto que no existe, vuelva a intentarlo.")
+      }
 });
 
 
+
+//alert("usted debe abonar: $" + precio + " por el producto deseado, " + productos[indice]+"," + " por la cantidad de: "+ cantidad + " unidades.")
